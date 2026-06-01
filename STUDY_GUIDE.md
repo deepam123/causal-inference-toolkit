@@ -221,7 +221,7 @@ causal-inference-toolkit/
 
 ## ✅ How You'll Know It's Working
 
-At the end of each method, you'll see an output like:
+At the end of each method, we'll see an output like:
 
 ```
 ── DiD Results ──────────────────────────────────────
@@ -233,9 +233,7 @@ escalation_rate     -0.048      -0.050        0.002 ✓
 repeat_contact_7d   -0.057      -0.060        0.003 ✓
 ```
 
-If estimates are close to true effects → method is working.
 If they're far off → we'll diagnose why (usually a missing confounder).
 
 ---
 
-*Built with Claude Code · github.com/deepam123/causal-inference-toolkit*
