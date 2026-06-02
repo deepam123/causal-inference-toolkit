@@ -66,12 +66,8 @@ Going more granular (e.g. queue × location × month) gives richer insights but:
 - Harder to satisfy parallel trends
 - Higher risk of false positives
 
-**Best practice:** Run aggregate DiD first, then subgroup analysis by queue/product to check for heterogeneous effects.
+
 
 ---
 
-## Further Reading
-- Angrist & Pischke — *Mostly Harmless Econometrics*
-- Callaway & Sant'Anna (2021) — DiD with multiple treatment periods
-- Roth et al. (2023) — What's trending in DiD research
 
