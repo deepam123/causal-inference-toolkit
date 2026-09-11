@@ -27,7 +27,7 @@ Not every causal question calls for the same tool. Work through this top to bott
 | Regression Discontinuity | 🔜 Planned | Treatment assigned by a hard cutoff (score, date, threshold) | `methods/regression_discontinuity.py` |
 | Instrumental Variables | 🔜 Planned | Confounded by something unmeasured, but a valid "nudge" variable exists | `methods/instrumental_variables.py` |
 | A/B Testing Foundations | ✅ Built | You control randomization — the RCT case | [`experimentation/01_ab_testing_foundations.py`](./experimentation/01_ab_testing_foundations.py) |
-| CUPED / Variance Reduction | ✅ Built | Tightening confidence intervals on a randomized test you're already running | [`experimentation/02_cuped_variance_reduction.py`](./experimentation/02_cuped_variance_reduction.py) |
+| CUPED / Variance Reduction | 🔜 Planned | Tightening confidence intervals on a randomized test you're already running | [`experimentation/02_cuped_variance_reduction.py`](./experimentation/02_cuped_variance_reduction.py) |
 
 Each ✅ script runs against the same synthetic dataset and reports its estimate next to the true simulated effect, so the accuracy is checkable rather than asserted. Each 🔜 method gets its own PR when it's built, following the same pattern.
 
