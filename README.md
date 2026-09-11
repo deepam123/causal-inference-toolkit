@@ -3,31 +3,41 @@ A working toolkit for causal inference and experimentation, built around one run
 
 Full scenario, hypotheses, and the "why simple averages won't work" walkthrough live in STUDY_GUIDE.md. This README is the map: what's built, what's next, and how to pick the right method for a given situation.
 Method landscape
-Not every causal question calls for the same tool. This is the logic used to pick one:
+Not every causal question calls for the same tool. Work through this top to bottom — the first row that matches your situation is your method:
 
-flowchart TD
+#
+Ask yourself...
+If yes →
+If no, keep going ↓
+1
+Do I control randomization (a real A/B test)?
+Standard A/B testing — see experimentation/
+↓
+2
+Is treatment assigned by a hard cutoff on a continuous score (age, date, credit score)?
+Regression Discontinuity Design
+↓
+3
+Do I have the same units before and after treatment, plus an untreated comparison group with similar pre-trends?
+Difference-in-Differences
+↓
+4
+Do I have before/after data but only one treated unit (or trends that don't line up with any control)?
+Synthetic Control
+↓
+5
+Do I have a time series with a known intervention date, but no control group at all?
+Interrupted Time Series
+↓
+6
+No time dimension, but I have rich pre-treatment covariates that explain who got treated?
+Propensity Score Matching
+↓
+7
+Confounded, but I have something that nudges people toward treatment for a reason unrelated to the outcome?
+Instrumental Variables (hardest to justify — use with caution)
+Reconsider the data, or run an RCT
 
-    A[Do you have a randomized<br/>treatment/control split?] -->|Yes| A1[Standard A/B test analysis<br/>— see experimentation/]
-
-    A -->|No| B{Is treatment assigned by a<br/>known cutoff on a continuous variable?}
-
-    B -->|Yes| RDD[Regression Discontinuity Design]
-
-    B -->|No| C{Do you have the same units<br/>before AND after, with an<br/>untreated comparison group?}
-
-    C -->|Yes| C1{Do treated & control look similar<br/>in level/trend before treatment?}
-
-    C1 -->|Yes, roughly parallel| DID[Difference-in-Differences]
-
-    C1 -->|No, or only one treated unit| SCM[Synthetic Control]
-
-    C -->|No control group at all| ITS[Interrupted Time Series]
-
-    C -->|No time dimension| D{Rich pre-treatment covariates<br/>that explain who got treated?}
-
-    D -->|Yes| PSM[Propensity Score Matching]
-
-    D -->|No, but something nudges<br/>treatment for an unrelated reason| IV[Instrumental Variables]
 
 Method
 Status
